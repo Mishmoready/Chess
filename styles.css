@@ -17,3 +17,17 @@
 .brown {
   background-color: rgb(169, 43, 43);
 }
+
+.black {
+  fill: rgb(28, 28, 28);
+}
+
+.white {
+  fill: white;
+}
+
+.square svg {
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+}
