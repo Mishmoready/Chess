@@ -98,8 +98,25 @@ createBoard();
 const allSquares = document.querySelectorAll("#gameBoard .square");
 allSquares.forEach((square) => {
   square.addEventListener("dragstart", dragStart);
+  square.addEventListener("dragover", dragOver);
+  square.addEventListener("drop", dragDrop);
 });
 
+let startPositionId;
+let draggedElement;
+
 function dragStart(e) {
-  console.log(e.target);
+  startPositionId = e.target.parentNode.getAttribute("square-id");
+  draggedElement = e.target;
+}
+
+function dragOver(e) {
+  e.preventdefault;
+}
+
+function dragDrop(e) {
+  e.stopPropagation();
+  e.target.parentNode.append(draggedElement);
+  e.target.remove();
+  // e.target.append(draggedElement);
 }
